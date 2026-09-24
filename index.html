@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>João Pedro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0F1720;
+    --bg-panel: #16212C;
+    --accent: #F2A93B;
+    --text: #ECEFF3;
+    --muted: #8C99A8;
+    --line: #263544;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; margin: 0; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow {
+    color: var(--accent);
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 58px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .hero p.lede {
+    margin-top: 20px;
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 18px;
+  }
+  .hero .contact-line {
+    margin-top: 28px;
+    font-size: 15px;
+  }
+  .hero .contact-line a {
+    color: var(--text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 24px;
+  }
+
+  .about p { color: var(--text); max-width: 620px; }
+
+  .exp-item { margin-bottom: 28px; }
+  .exp-item:last-child { margin-bottom: 0; }
+  .exp-item h3 { font-size: 17px; font-weight: 500; }
+  .exp-item p { color: var(--muted); margin: 6px 0 0; font-size: 15px; max-width: 560px; }
+
+  .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tags span {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .goal-box {
+    background: var(--bg-panel);
+    border-left: 3px solid var(--accent);
+    padding: 20px 24px;
+    margin-top: 8px;
+  }
+  .goal-box p { margin: 0; color: var(--text); }
+  .goal-box .companies { margin-top: 10px; color: var(--muted); font-size: 14px; }
+
+  footer {
+    padding: 48px 0 80px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 480px) {
+    header.hero { padding: 64px 0 40px; }
+    section { padding: 40px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero wrap">
+  <div class="eyebrow">São Paulo, zona sul — aberto a outras regiões</div>
+  <h1>João Pedro</h1>
+  <p class="lede">Em busca da minha primeira vaga júnior em Tecnologia. Curioso, ativo, e disposto a aprender rápido.</p>
+  <div class="contact-line">
+    <a href="mailto:doria5797@gmail.com">doria5797@gmail.com</a>
+  </div>
+</header>
+
+<section class="about wrap">
+  <h2>Sobre mim</h2>
+  <p>Gosto de aprender coisas novas, fazer amizades e seguir em frente mesmo quando aparecem dificuldades. Tenho sonhos claros para o meu futuro — quero crescer profissionalmente e, um dia, ter meu próprio negócio. Sou uma pessoa ativa, que gosta de ouvir as pessoas com atenção e curiosidade genuína.</p>
+</section>
+
+<section class="wrap">
+  <h2>Experiência e disposição</h2>
+  <div class="exp-item">
+    <h3>Apoio em obra — trabalho com o tio</h3>
+    <p>Ajudei meu tio a bater laje: trabalho físico, em equipe, que exige atenção e responsabilidade.</p>
+  </div>
+  <div class="exp-item">
+    <h3>Apoio em casa</h3>
+    <p>Ajudo minha mãe nas tarefas de casa — organização e comprometimento no dia a dia.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Interesses e habilidades</h2>
+  <div class="tags">
+    <span>Redes sociais</span>
+    <span>Futebol</span>
+    <span>Boa capacidade de escuta</span>
+    <span>Curiosidade</span>
+    <span>Inglês (nível iniciante)</span>
+  </div>
+</section>
+
+<section class="wrap">
+  <h2>Objetivo</h2>
+  <div class="goal-box">
+    <p>Buscando uma vaga júnior na área de Tecnologia. Tenho interesse especial em empresas como:</p>
+    <div class="companies">3M Brasil · Grupo 3 Corações · B3 (Brasil, Bolsa, Balcão)</div>
+  </div>
+</section>
+
+<footer class="wrap">
+  Vamos conversar? <a href="mailto:doria5797@gmail.com">doria5797@gmail.com</a>
+</footer>
+
+</body>
+</html>
