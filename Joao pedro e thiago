@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conecta Criativo: design e divulgação digital acessível para pequenos empreendedores do Grajaú, São Paulo.">
+  <title>Conecta Criativo | Sua ideia, nossa criatividade!</title>
+  <style>
+    :root {
+      --blue: #102d64;
+      --blue-2: #1746a2;
+      --yellow: #f5b52e;
+      --ink: #172033;
+      --muted: #647087;
+      --paper: #f5f7fb;
+      --white: #fff;
+      --line: #e4e9f2;
+      --radius: 20px;
+      --shadow: 0 14px 40px rgba(16,45,100,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .container { width: min(1100px, calc(100% - 40px)); margin: auto; }
+    header {
+      background: var(--blue);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 5px 22px rgba(0,0,0,.12);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark {
+      width: 44px; height: 44px; border-radius: 13px;
+      display: grid; place-items: center;
+      background: var(--yellow); color: var(--blue);
+      font-size: 23px; font-weight: 900;
+    }
+    .brand strong { display: block; letter-spacing: .4px; font-size: 17px; }
+    .brand small { color: #f7ce72; display: block; font-size: 12px; }
+    nav { display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a { color: #edf2ff; text-decoration: none; font-size: 14px; }
+    nav a:hover { color: var(--yellow); }
+    .hero {
+      color: var(--white);
+      background: linear-gradient(125deg, #102d64 0%, #1746a2 72%, #2860bd 100%);
+      padding: 76px 0 70px;
+      overflow: hidden;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 42px; }
+    .eyebrow {
+      display: inline-block; color: #ffe09a; background: rgba(245,181,46,.14);
+      border: 1px solid rgba(245,181,46,.35); padding: 7px 12px;
+      border-radius: 999px; font-size: 12px; font-weight: 700; letter-spacing: .5px;
+    }
+    h1 { font-size: clamp(38px, 6vw, 62px); line-height: 1.05; margin: 18px 0; letter-spacing: -1.7px; }
+    .hero h1 span { color: var(--yellow); }
+    .hero p { color: #e0e9fb; max-width: 610px; font-size: 18px; }
+    .buttons { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .btn {
+      display: inline-block; padding: 13px 19px; border-radius: 12px;
+      text-decoration: none; font-weight: 700; font-size: 14px;
+      transition: transform .2s, opacity .2s;
+    }
+    .btn:hover { transform: translateY(-2px); opacity: .92; }
+    .btn-yellow { background: var(--yellow); color: var(--blue); }
+    .btn-outline { border: 1px solid rgba(255,255,255,.55); color: white; }
+    .hero-card {
+      background: rgba(255,255,255,.10); border: 1px solid rgba(255,255,255,.2);
+      padding: 22px; border-radius: 24px; backdrop-filter: blur(8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.14);
+    }
+    .mockup {
+      background: #fff; border-radius: 17px; padding: 16px; color: var(--ink);
+      transform: rotate(2deg);
+    }
+    .mock-top { display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--muted); }
+    .mock-poster {
+      margin-top: 13px; min-height: 235px; border-radius: 13px;
+      padding: 22px; display: flex; flex-direction: column; justify-content: space-between;
+      color: white; background: linear-gradient(145deg, #1746a2, #102d64);
+    }
+    .mock-poster .tag { color: var(--blue); background: var(--yellow); padding: 5px 9px; border-radius: 7px; font-size: 10px; font-weight: 800; width: fit-content; }
+    .mock-poster h3 { font-size: 30px; line-height: 1.05; margin: 12px 0; }
+    .mock-poster p { color: #e6edff; font-size: 12px; margin: 0; }
+    .mock-footer { font-size: 10px; opacity: .8; }
+    section { padding: 76px 0; }
+    section.alt { background: var(--paper); }
+    .section-head { max-width: 700px; margin-bottom: 32px; }
+    .kicker { color: var(--blue-2); font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.2px; }
+    h2 { color: var(--blue); font-size: clamp(28px, 4vw, 40px); line-height: 1.15; margin: 9px 0 12px; letter-spacing: -.7px; }
+    .lead { color: var(--muted); font-size: 17px; margin: 0; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 28px 0; }
+    .stat {
+      background: white; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px; box-shadow: var(--shadow);
+    }
+    .stat strong { display: block; color: var(--blue); font-size: clamp(28px, 4vw, 38px); line-height: 1.1; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .note { color: var(--muted); font-size: 12px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .card {
+      background: white; border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 23px; box-shadow: var(--shadow);
+    }
+    .icon {
+      width: 46px; height: 46px; display: grid; place-items: center;
+      border-radius: 14px; background: #fff3d6; color: var(--blue); font-size: 22px;
+    }
+    .card h3 { color: var(--blue); margin: 14px 0 7px; font-size: 19px; }
+    .card p { color: var(--muted); margin: 0; font-size: 14px; }
+    .service-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .service {
+      background: white; border: 1px solid var(--line); padding: 15px 17px;
+      border-radius: 13px; display: flex; gap: 11px; align-items: center;
+    }
+    .check { color: #16865b; font-weight: 900; }
+    .pricing { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+    .pricing th, .pricing td { padding: 15px 18px; border-bottom: 1px solid var(--line); text-align: left; }
+    .pricing th { background: var(--blue); color: white; font-size: 13px; }
+    .pricing td:last-child { font-weight: 800; color: var(--blue); }
+    .pricing tr:last-child td { border-bottom: 0; }
+    .revenue {
+      margin-top: 22px; background: var(--blue); color: white; padding: 25px;
+      border-radius: var(--radius); display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+    }
+    .revenue strong { color: var(--yellow); font-size: 34px; }
+    .revenue p { margin: 3px 0 0; color: #dce6fb; font-size: 13px; }
+    .investor { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+    .invest-box { background: var(--blue); color: white; padding: 28px; border-radius: var(--radius); }
+    .invest-box h3 { color: var(--yellow); margin-top: 0; }
+    .invest-box li { margin: 9px 0; color: #e5ecfb; }
+    .invest-amount { background: #fff3d6; border-radius: var(--radius); padding: 28px; }
+    .invest-amount strong { display: block; font-size: 42px; color: var(--blue); }
+    .contact {
+      background: linear-gradient(120deg, var(--blue), #1746a2);
+      color: white; border-radius: 26px; padding: 38px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    }
+    .contact h2 { color: white; }
+    .contact p { color: #dce6fb; }
+    .contact-links { display: grid; gap: 12px; align-content: center; }
+    .contact-links a, .contact-links span {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.17);
+      border-radius: 12px; padding: 13px 15px; text-decoration: none;
+    }
+    footer { padding: 27px 0; color: var(--muted); font-size: 13px; text-align: center; }
+    @media (max-width: 780px) {
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; }
+      nav { gap: 12px; }
+      .hero-grid, .investor, .contact { grid-template-columns: 1fr; }
+      .hero { padding: 55px 0; }
+      .cards { grid-template-columns: 1fr; }
+      .stats, .service-list { grid-template-columns: 1fr; }
+      .revenue { align-items: flex-start; flex-direction: column; }
+      section { padding: 56px 0; }
+      .contact { padding: 27px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Conecta Criativo - início">
+        <span class="brand-mark">✦</span>
+        <span><strong>CONECTA CRIATIVO</strong><small>Sua ideia, nossa criatividade!</small></span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <a href="#problema">Problema</a>
+        <a href="#solucao">Solução</a>
+        <a href="#precos">Como ganhamos</a>
+        <a href="#investidores">Investidores</a>
+        <a href="#revendedores">Revendedores</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">DESIGN • CRIATIVIDADE • DIVULGAÇÃO</span>
+          <h1>Sua marca merece <span>ser vista!</span></h1>
+          <p>Ajudamos pequenos empreendedores do Grajaú a divulgar seus produtos e serviços com artes digitais acessíveis, criativas e profissionais.</p>
+          <div class="buttons">
+            <a class="btn btn-yellow" href="#solucao">Conheça a solução</a>
+            <a class="btn btn-outline" href="#contato">Fale com a gente</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Exemplo de arte promocional">
+          <div class="mockup">
+            <div class="mock-top"><strong>✦ CONECTA CRIATIVO</strong><span>EXEMPLO DE POST</span></div>
+            <div class="mock-poster">
+              <span class="tag">SUA MARCA EM DESTAQUE</span>
+              <div><h3>IDEIAS QUE<br>ATRAEM CLIENTES.</h3><p>Design e divulgação para o seu negócio crescer.</p></div>
+              <div class="mock-footer">SUA IDEIA, NOSSA CRIATIVIDADE!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="problema" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">01 • O problema</span>
+          <h2>Pequenos negócios também precisam aparecer.</h2>
+          <p class="lead">Muitos empreendedores precisam divulgar seus produtos, mas nem todos têm orçamento para contratar uma agência de publicidade.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>384.873</strong><span>habitantes no distrito do Grajaú, segundo o Censo 2022.</span></div>
+          <div class="stat"><strong>76.204</strong><span>famílias cadastradas no CadÚnico no Grajaú, em julho de 2022.</span></div>
+        </div>
+        <p class="note">Fontes: Prefeitura de São Paulo — Censo 2022 e dados do CadÚnico de julho de 2022. Esses números indicam a dimensão do território e a demanda social; não representam a quantidade de comerciantes nem comprovam, por si só, a demanda pelo serviço de design.</p>
+      </div>
+    </section>
+
+    <section id="solucao">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">02 • Nossa solução</span>
+          <h2>Divulgação digital com preço acessível.</h2>
+          <p class="lead">Criamos materiais para que os pequenos empreendedores apresentem melhor seus produtos, divulguem promoções e fortaleçam sua presença nas redes sociais.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🎨</div><h3>Artes para redes sociais</h3><p>Posts e stories para divulgar produtos, serviços e novidades.</p></article>
+          <article class="card"><div class="icon">📋</div><h3>Cardápios e cartazes</h3><p>Materiais digitais organizados para restaurantes, lanchonetes e lojas.</p></article>
+          <article class="card"><div class="icon">📣</div><h3>Promoções e eventos</h3><p>Peças visuais para ofertas, convites e campanhas locais.</p></article>
+        </div>
+        <h3 style="color:var(--blue);margin:32px 0 15px;">Nossos serviços</h3>
+        <div class="service-list">
+          <div class="service"><span class="check">✓</span> Criação de artes para Instagram</div>
+          <div class="service"><span class="check">✓</span> Cartazes digitais</div>
+          <div class="service"><span class="check">✓</span> Cardápios digitais</div>
+          <div class="service"><span class="check">✓</span> Divulgação de promoções</div>
+          <div class="service"><span class="check">✓</span> Convites personalizados</div>
+          <div class="service"><span class="check">✓</span> Logotipos simples</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="precos" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">03 • Como ganhamos dinheiro</span>
+          <h2>Serviços individuais e pacotes mensais.</h2>
+          <p class="lead">O cliente escolhe o serviço de acordo com a necessidade do negócio.</p>
+        </div>
+        <table class="pricing">
+          <thead><tr><th>Serviço</th><th>Preço sugerido</th></tr></thead>
+          <tbody>
+            <tr><td>Arte para Instagram</td><td>R$ 15</td></tr>
+            <tr><td>Cartaz digital</td><td>R$ 20</td></tr>
+            <tr><td>Cardápio digital</td><td>R$ 40</td></tr>
+            <tr><td>Pacote com 5 artes</td><td>R$ 60</td></tr>
+            <tr><td>Pacote mensal com 12 artes</td><td>R$ 150</td></tr>
+          </tbody>
+        </table>
+        <div class="revenue">
+          <div><b>Exemplo de faturamento mensal</b><p>Três clientes contratando o pacote de R$ 150.</p></div>
+          <strong>R$ 450</strong>
+        </div>
+        <p class="note">Exemplo hipotético de faturamento bruto, antes de despesas. Os preços são sugestões iniciais e podem ser ajustados conforme o trabalho e os custos.</p>
+      </div>
+    </section>
+
+    <section id="investidores">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">04 • Para investidores</span>
+          <h2>Ajude uma ideia local a crescer.</h2>
+          <p class="lead">Buscamos apoio para estruturar o projeto, capacitar jovens e atender mais empreendedores do Grajaú.</p>
+        </div>
+        <div class="investor">
+          <div class="invest-box">
+            <h3>Como o investimento será utilizado</h3>
+            <ul>
+              <li>Divulgação e apresentação da marca.</li>
+              <li>Equipamentos e materiais de trabalho.</li>
+              <li>Capacitação em design e comunicação.</li>
+              <li>Ampliação dos serviços e atendimento.</li>
+            </ul>
+          </div>
+          <div class="invest-amount">
+            <span class="kicker">Meta inicial estimada</span>
+            <strong>R$ 500</strong>
+            <p>Valor proposto para a estruturação e divulgação inicial do negócio. É uma estimativa do projeto, não uma captação já realizada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="revendedores" class="alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">05 • Para revendedores e parceiros</span>
+          <h2>Indique nossos serviços.</h2>
+          <p class="lead">Pessoas interessadas podem apresentar o Conecta Criativo a comerciantes e empreendedores da região.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">🤝</div><h3>Indique</h3><p>Encontre um negócio que precise melhorar sua divulgação.</p></article>
+          <article class="card"><div class="icon">💬</div><h3>Apresente</h3><p>Mostre os serviços e os pacotes disponíveis ao possível cliente.</p></article>
+          <article class="card"><div class="icon">⭐</div><h3>Receba comissão</h3><p>Comissão e condições combinadas previamente para cada venda concluída.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="contact">
+          <div>
+            <span class="eyebrow">FALE COM A GENTE</span>
+            <h2>Vamos conectar ideias?</h2>
+            <p>Entre em contato para conhecer os serviços, conversar sobre parcerias ou solicitar um orçamento.</p>
+            <a class="btn btn-yellow" href="mailto:contato@conectacriativo.com?subject=Quero%20conhecer%20o%20Conecta%20Criativo">Enviar e-mail</a>
+          </div>
+          <div class="contact-links">
+            <span>📱 WhatsApp: <b>adicione seu número</b></span>
+            <span>📷 Instagram: <b>@conectacriativo</b></span>
+            <span>✉️ E-mail: <b>adicione seu e-mail</b></span>
+            <span>📍 Região de atendimento: <b>Grajaú – São Paulo/SP</b></span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <b>Conecta Criativo</b> — Sua ideia, nossa criatividade!<br>
+      Projeto de empreendedorismo e geração de renda no Grajaú – São Paulo.
+      <div style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(100,112,135,.25);">
+        <b>Autoria</b><br>
+        João Pedro Doria Damasceno<br>
+        Thiago da Conceição Anísio<br>
+        <b>Mais Unidos</b> · Programa Access
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
